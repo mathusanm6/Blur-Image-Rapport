@@ -1,0 +1,58 @@
+\subsection{Algorithme de Richardson-Lucy}
+
+L'algorithme de Richardson-Lucy procède de manière itérative comme suit :
+
+\begin{algorithm}[H]
+\caption{Richardson-Lucy Deconvolution}
+\KwIn{Image floue $I$, PSF $P$, nombre d'itérations $n\_it$}
+\KwOut{Image restaurée $J$}
+Initialiser $J_0 = I$\;
+\For{$n = 1$ \KwTo $n\_it$}{
+    Convoluer $J_n$ avec $P$ pour obtenir une estimation floutée $I_{\text{estimée}}$\;
+    $I_{\text{estimée}} = J_n \ast P$\;
+    Calculer le ratio de flou relatif $\text{Ratio} = \frac{I}{I_{\text{estimée}} + \epsilon}$\;
+    Convoluer ce ratio avec le miroir de la PSF\;
+    $\text{Correction} = \text{Ratio} \ast P_{\text{miroir}}$\;
+    Mettre à jour l'estimation $J_{n+1} = J_n \times \text{Correction}$\;
+}
+\Return $J_{n+1}$\;
+\end{algorithm}
+
+\subsubsection{Initialisation}
+L'algorithme commence par une estimation initiale de l'image défloutée \( J_0 \), souvent prise comme étant l'image observée \( I \).
+
+\subsubsection{Convolution}
+À chaque itération, l'estimation actuelle \( J_n \) est convoluée avec la PSF \( P \) pour obtenir une estimation floutée \( I_{\text{estimée}} \).
+
+\begin{equation}
+I_{\text{estimée}} = J_n \ast P
+\end{equation}
+
+\subsubsection{Ratio de flou relatif}
+Le ratio de flou relatif est calculé pour mesurer combien l'estimation floutée diffère de l'image observée.
+
+\begin{equation}
+\text{Ratio} = \frac{I}{I_{\text{estimée}} + \epsilon}
+\end{equation}
+
+où \( \epsilon \) est une petite constante pour éviter la division par zéro.
+
+\subsubsection{Correction de l'estimation}
+Ce ratio est ensuite convolué avec le miroir de la PSF \( P_{\text{miroir}} \) pour corriger l'estimation.
+
+\begin{equation}
+\text{Correction} = \text{Ratio} \ast P_{\text{miroir}}
+\end{equation}
+
+\subsubsection{Mise à jour de l'estimation}
+L'estimation est mise à jour en multipliant l'estimation actuelle par la correction obtenue.
+
+\begin{equation}
+J_{n+1} = J_n \times \text{Correction}
+\end{equation}
+
+\subsubsection{Explication de l'utilisation du miroir de la PSF}
+
+La convolution avec le miroir de la PSF est essentielle pour corriger l'estimation de l'image. 
+Cette étape simule l'effet inverse de la convolution effectuée par la PSF initiale.
+De plus, elle s'assure de la symétrie dans la convolution, orientant correctement les mises à jour de l'image.
