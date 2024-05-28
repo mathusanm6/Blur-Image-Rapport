@@ -1,0 +1,153 @@
+\subsection{Résultats}
+
+\subsubsection{Images Originales}
+
+\begin{figure}[h!]
+    \centering
+    \begin{minipage}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=0.8\textwidth]{images/originals/flower.jpg}
+        \caption*{(1) Fleur (niveaux de gris)}
+    \end{minipage}
+    \begin{minipage}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=0.8\textwidth]{images/originals/tiger.jpeg}
+        \caption*{(2) Tigre}
+    \end{minipage}
+\end{figure}
+
+\subsubsection{Images Traitées}
+
+\subsubsection*{(1) Fleur (niveaux de gris)}
+
+\begin{table}[h!]
+    \centering
+    \captionsetup{justification=centering}
+    \caption*{Images Floutées}
+    \begin{tabular}{>{\centering\arraybackslash} m{2cm} >{\centering\arraybackslash} m{2cm} >{\centering\arraybackslash} m{2cm} >{\centering\arraybackslash} m{2cm} >{\centering\arraybackslash} m{2cm} >{\centering\arraybackslash} m{2cm} >{\centering\arraybackslash} m{2cm}}
+        \textbf{Average 3x3}                                                                   & \textbf{Average 5x5} & \textbf{Average 11x11} & \textbf{Gaussian 3x3, sigma: 1.0} & \textbf{Gaussian 3x3, sigma: 2.0} & \textbf{Gaussian 5x5, sigma: 1.0} & \textbf{Gaussian 5x5, sigma: 2.0} \\
+        \includegraphics[width=2cm]{images/processed/flower/average_3x3/blurred.png}           &
+        \includegraphics[width=2cm]{images/processed/flower/average_5x5/blurred.png}           &
+        \includegraphics[width=2cm]{images/processed/flower/average_11x11/blurred.png}         &
+        \includegraphics[width=2cm]{images/processed/flower/gaussian_3x3_sigma1.0/blurred.png} &
+        \includegraphics[width=2cm]{images/processed/flower/gaussian_3x3_sigma2.0/blurred.png} &
+        \includegraphics[width=2cm]{images/processed/flower/gaussian_5x5_sigma1.0/blurred.png} &
+        \includegraphics[width=2cm]{images/processed/flower/gaussian_5x5_sigma2.0/blurred.png}                                                                                                                                                                                                 \\
+    \end{tabular}
+\end{table}
+
+\begin{table}[h!]
+    \centering
+    \captionsetup{justification=centering}
+    \caption*{Images Défloutées - 5 Itérations}
+    \begin{tabular}{>{\centering\arraybackslash} m{2cm} >{\centering\arraybackslash} m{2cm} >{\centering\arraybackslash} m{2cm} >{\centering\arraybackslash} m{2cm} >{\centering\arraybackslash} m{2cm} >{\centering\arraybackslash} m{2cm} >{\centering\arraybackslash} m{2cm}}
+        \textbf{Average 3x3}                                                                            & \textbf{Average 5x5} & \textbf{Average 11x11} & \textbf{Gaussian 3x3, sigma: 1.0} & \textbf{Gaussian 3x3, sigma: 2.0} & \textbf{Gaussian 5x5, sigma: 1.0} & \textbf{Gaussian 5x5, sigma: 2.0} \\
+        \includegraphics[width=2cm]{images/processed/flower/average_3x3/unblurred_5-iter.png}           &
+        \includegraphics[width=2cm]{images/processed/flower/average_5x5/unblurred_5-iter.png}           &
+        \includegraphics[width=2cm]{images/processed/flower/average_11x11/unblurred_5-iter.png}         &
+        \includegraphics[width=2cm]{images/processed/flower/gaussian_3x3_sigma1.0/unblurred_5-iter.png} &
+        \includegraphics[width=2cm]{images/processed/flower/gaussian_3x3_sigma2.0/unblurred_5-iter.png} &
+        \includegraphics[width=2cm]{images/processed/flower/gaussian_5x5_sigma1.0/unblurred_5-iter.png} &
+        \includegraphics[width=2cm]{images/processed/flower/gaussian_5x5_sigma2.0/unblurred_5-iter.png}                                                                                                                                                                                                 \\
+    \end{tabular}
+\end{table}
+
+\begin{table}[h!]
+    \centering
+    \captionsetup{justification=centering}
+    \caption*{Unblurred Images - 10 Iterations}
+    \begin{tabular}{>{\centering\arraybackslash} m{2cm} >{\centering\arraybackslash} m{2cm} >{\centering\arraybackslash} m{2cm} >{\centering\arraybackslash} m{2cm} >{\centering\arraybackslash} m{2cm} >{\centering\arraybackslash} m{2cm} >{\centering\arraybackslash} m{2cm}}
+        \textbf{Average 3x3}                                                                             & \textbf{Average 5x5} & \textbf{Average 11x11} & \textbf{Gaussian 3x3, sigma: 1.0} & \textbf{Gaussian 3x3, sigma: 2.0} & \textbf{Gaussian 5x5, sigma: 1.0} & \textbf{Gaussian 5x5, sigma: 2.0} \\
+        \includegraphics[width=2cm]{images/processed/flower/average_3x3/unblurred_10-iter.png}           &
+        \includegraphics[width=2cm]{images/processed/flower/average_5x5/unblurred_10-iter.png}           &
+        \includegraphics[width=2cm]{images/processed/flower/average_11x11/unblurred_10-iter.png}         &
+        \includegraphics[width=2cm]{images/processed/flower/gaussian_3x3_sigma1.0/unblurred_10-iter.png} &
+        \includegraphics[width=2cm]{images/processed/flower/gaussian_3x3_sigma2.0/unblurred_10-iter.png} &
+        \includegraphics[width=2cm]{images/processed/flower/gaussian_5x5_sigma1.0/unblurred_10-iter.png} &
+        \includegraphics[width=2cm]{images/processed/flower/gaussian_5x5_sigma2.0/unblurred_10-iter.png}                                                                                                                                                                                                 \\
+    \end{tabular}
+\end{table}
+
+\begin{table}[h!]
+    \centering
+    \captionsetup{justification=centering}
+    \caption*{Images Défloutées - 15 Itérations}
+    \begin{tabular}{>{\centering\arraybackslash} m{2cm} >{\centering\arraybackslash} m{2cm} >{\centering\arraybackslash} m{2cm} >{\centering\arraybackslash} m{2cm} >{\centering\arraybackslash} m{2cm} >{\centering\arraybackslash} m{2cm} >{\centering\arraybackslash} m{2cm}}
+        \textbf{Average 3x3}                                                                             & \textbf{Average 5x5} & \textbf{Average 11x11} & \textbf{Gaussian 3x3, sigma: 1.0} & \textbf{Gaussian 3x3, sigma: 2.0} & \textbf{Gaussian 5x5, sigma: 1.0} & \textbf{Gaussian 5x5, sigma: 2.0} \\
+        \includegraphics[width=2cm]{images/processed/flower/average_3x3/unblurred_15-iter.png}           &
+        \includegraphics[width=2cm]{images/processed/flower/average_5x5/unblurred_15-iter.png}           &
+        \includegraphics[width=2cm]{images/processed/flower/average_11x11/unblurred_15-iter.png}         &
+        \includegraphics[width=2cm]{images/processed/flower/gaussian_3x3_sigma1.0/unblurred_15-iter.png} &
+        \includegraphics[width=2cm]{images/processed/flower/gaussian_3x3_sigma2.0/unblurred_15-iter.png} &
+        \includegraphics[width=2cm]{images/processed/flower/gaussian_5x5_sigma1.0/unblurred_15-iter.png} &
+        \includegraphics[width=2cm]{images/processed/flower/gaussian_5x5_sigma2.0/unblurred_15-iter.png}                                                                                                                                                                                                 \\
+    \end{tabular}
+\end{table}
+
+\newpage
+
+\subsubsection*{(2) Tigre}
+
+\begin{table}[h!]
+    \centering
+    \captionsetup{justification=centering}
+    \caption*{Images Floutées}
+    \begin{tabular}{>{\centering\arraybackslash} m{2cm} >{\centering\arraybackslash} m{2cm} >{\centering\arraybackslash} m{2cm} >{\centering\arraybackslash} m{2cm} >{\centering\arraybackslash} m{2cm} >{\centering\arraybackslash} m{2cm} >{\centering\arraybackslash} m{2cm}}
+        \textbf{Average 3x3}                                                                  & \textbf{Average 5x5} & \textbf{Average 11x11} & \textbf{Gaussian 3x3, sigma: 1.0} & \textbf{Gaussian 3x3, sigma: 2.0} & \textbf{Gaussian 5x5, sigma: 1.0} & \textbf{Gaussian 5x5, sigma: 2.0} \\
+        \includegraphics[width=2cm]{images/processed/tiger/average_3x3/blurred.png}           &
+        \includegraphics[width=2cm]{images/processed/tiger/average_5x5/blurred.png}           &
+        \includegraphics[width=2cm]{images/processed/tiger/average_11x11/blurred.png}         &
+        \includegraphics[width=2cm]{images/processed/tiger/gaussian_3x3_sigma1.0/blurred.png} &
+        \includegraphics[width=2cm]{images/processed/tiger/gaussian_3x3_sigma2.0/blurred.png} &
+        \includegraphics[width=2cm]{images/processed/tiger/gaussian_5x5_sigma1.0/blurred.png} &
+        \includegraphics[width=2cm]{images/processed/tiger/gaussian_5x5_sigma2.0/blurred.png}                                                                                                                                                                                                 \\
+    \end{tabular}
+\end{table}
+
+\begin{table}[h!]
+    \centering
+    \captionsetup{justification=centering}
+    \caption*{Images Défloutées - 5 Itérations}
+    \begin{tabular}{>{\centering\arraybackslash} m{2cm} >{\centering\arraybackslash} m{2cm} >{\centering\arraybackslash} m{2cm} >{\centering\arraybackslash} m{2cm} >{\centering\arraybackslash} m{2cm} >{\centering\arraybackslash} m{2cm} >{\centering\arraybackslash} m{2cm}}
+        \textbf{Average 3x3}                                                                           & \textbf{Average 5x5} & \textbf{Average 11x11} & \textbf{Gaussian 3x3, sigma: 1.0} & \textbf{Gaussian 3x3, sigma: 2.0} & \textbf{Gaussian 5x5, sigma: 1.0} & \textbf{Gaussian 5x5, sigma: 2.0} \\
+        \includegraphics[width=2cm]{images/processed/tiger/average_3x3/unblurred_5-iter.png}           &
+        \includegraphics[width=2cm]{images/processed/tiger/average_5x5/unblurred_5-iter.png}           &
+        \includegraphics[width=2cm]{images/processed/tiger/average_11x11/unblurred_5-iter.png}         &
+        \includegraphics[width=2cm]{images/processed/tiger/gaussian_3x3_sigma1.0/unblurred_5-iter.png} &
+        \includegraphics[width=2cm]{images/processed/tiger/gaussian_3x3_sigma2.0/unblurred_5-iter.png} &
+        \includegraphics[width=2cm]{images/processed/tiger/gaussian_5x5_sigma1.0/unblurred_5-iter.png} &
+        \includegraphics[width=2cm]{images/processed/tiger/gaussian_5x5_sigma2.0/unblurred_5-iter.png}                                                                                                                                                                                                 \\
+    \end{tabular}
+\end{table}
+
+\begin{table}[h!]
+    \centering
+    \captionsetup{justification=centering}
+    \caption*{Images Défloutées - 10 Itérations}
+    \begin{tabular}{>{\centering\arraybackslash} m{2cm} >{\centering\arraybackslash} m{2cm} >{\centering\arraybackslash} m{2cm} >{\centering\arraybackslash} m{2cm} >{\centering\arraybackslash} m{2cm} >{\centering\arraybackslash} m{2cm} >{\centering\arraybackslash} m{2cm}}
+        \textbf{Average 3x3}                                                                            & \textbf{Average 5x5} & \textbf{Average 11x11} & \textbf{Gaussian 3x3, sigma: 1.0} & \textbf{Gaussian 3x3, sigma: 2.0} & \textbf{Gaussian 5x5, sigma: 1.0} & \textbf{Gaussian 5x5, sigma: 2.0} \\
+        \includegraphics[width=2cm]{images/processed/tiger/average_3x3/unblurred_10-iter.png}           &
+        \includegraphics[width=2cm]{images/processed/tiger/average_5x5/unblurred_10-iter.png}           &
+        \includegraphics[width=2cm]{images/processed/tiger/average_11x11/unblurred_10-iter.png}         &
+        \includegraphics[width=2cm]{images/processed/tiger/gaussian_3x3_sigma1.0/unblurred_10-iter.png} &
+        \includegraphics[width=2cm]{images/processed/tiger/gaussian_3x3_sigma2.0/unblurred_10-iter.png} &
+        \includegraphics[width=2cm]{images/processed/tiger/gaussian_5x5_sigma1.0/unblurred_10-iter.png} &
+        \includegraphics[width=2cm]{images/processed/tiger/gaussian_5x5_sigma2.0/unblurred_10-iter.png}                                                                                                                                                                                                 \\
+    \end{tabular}
+\end{table}
+
+\begin{table}[h!]
+    \centering
+    \captionsetup{justification=centering}
+    \caption*{Images Défloutées - 15 Itérations}
+    \begin{tabular}{>{\centering\arraybackslash} m{2cm} >{\centering\arraybackslash} m{2cm} >{\centering\arraybackslash} m{2cm} >{\centering\arraybackslash} m{2cm} >{\centering\arraybackslash} m{2cm} >{\centering\arraybackslash} m{2cm} >{\centering\arraybackslash} m{2cm}}
+        \textbf{Average 3x3}                                                                            & \textbf{Average 5x5} & \textbf{Average 11x11} & \textbf{Gaussian 3x3, sigma: 1.0} & \textbf{Gaussian 3x3, sigma: 2.0} & \textbf{Gaussian 5x5, sigma: 1.0} & \textbf{Gaussian 5x5, sigma: 2.0} \\
+        \includegraphics[width=2cm]{images/processed/tiger/average_3x3/unblurred_15-iter.png}           &
+        \includegraphics[width=2cm]{images/processed/tiger/average_5x5/unblurred_15-iter.png}           &
+        \includegraphics[width=2cm]{images/processed/tiger/average_11x11/unblurred_15-iter.png}         &
+        \includegraphics[width=2cm]{images/processed/tiger/gaussian_3x3_sigma1.0/unblurred_15-iter.png} &
+        \includegraphics[width=2cm]{images/processed/tiger/gaussian_3x3_sigma2.0/unblurred_15-iter.png} &
+        \includegraphics[width=2cm]{images/processed/tiger/gaussian_5x5_sigma1.0/unblurred_15-iter.png} &
+        \includegraphics[width=2cm]{images/processed/tiger/gaussian_5x5_sigma2.0/unblurred_15-iter.png}                                                                                                                                                                                                 \\
+    \end{tabular}
+\end{table}
