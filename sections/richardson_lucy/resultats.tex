@@ -1,5 +1,27 @@
 \subsection{Résultats}
 
+\subsubsection{Détails sur l'implémentation}
+
+L'algorithme de Richardson-Lucy a été implémenté en Python en utilisant la bibliothèque NumPy pour effectuer les calculs matriciels de base, sans recourir à des bibliothèques tierces souvent considérées comme des \textit{boîtes noires}. Cependant, pour des raisons de performance, la bibliothèque SciPy a été utilisée pour les calculs de convolution. Les étapes suivantes ont été suivies :
+
+\begin{itemize}
+    \item Les images floues ont été générées en utilisant la fonction \texttt{scipy.signal.convolve2d} avec un noyau de convolution approprié.
+    \item Ces images floues ont ensuite été défloutées en appliquant l'algorithme de Richardson-Lucy avec un nombre variable d'itérations.
+    \item Les images traitées ont été enregistrées au format PNG pour une visualisation facile.
+\end{itemize}
+
+Ainsi, deux versions de l'implémentation de l'algorithme de Richardson-Lucy ont été réalisées :
+\begin{itemize}
+    \item Une version manuelle, qui ne bénéficie pas des optimisations et est donc plus lente.
+    \item Une version rapide (\textit{fast}), qui utilise la bibliothèque SciPy pour les calculs de convolution, offrant ainsi des performances nettement supérieures.
+\end{itemize}
+
+La différence de performance entre ces deux versions est significative, la version rapide étant beaucoup plus efficace que la version manuelle.
+
+\subsubsection{Petite précision sur le noyau de convolution}
+
+Par ailleurs, plutôt que le PSF, un noyau de convolution a été utilisé pour générer les images floues. Cela a permis de simuler le flou sans avoir besoin de connaître la PSF exacte.
+
 \subsubsection{Images Originales}
 
 \begin{figure}[h!]
@@ -16,6 +38,7 @@
     \end{minipage}
 \end{figure}
 
+\newpage
 \subsubsection{Images Traitées}
 
 \subsubsection*{(1) Fleur (niveaux de gris)}
@@ -85,7 +108,6 @@
 \end{table}
 
 \newpage
-
 \subsubsection*{(2) Tigre}
 
 \begin{table}[h!]
