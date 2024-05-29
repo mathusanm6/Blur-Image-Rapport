@@ -16,9 +16,8 @@ Ainsi, deux versions de l'implémentation de l'algorithme de Richardson-Lucy ont
     \item Une version rapide (\textit{fast}), qui utilise la bibliothèque SciPy pour les calculs de convolution, offrant ainsi des performances nettement supérieures.
 \end{itemize}
 
-La différence de performance entre ces deux versions est significative, la version rapide étant beaucoup plus efficace que la version manuelle.
-
-\subsubsection{Petite précision sur le noyau de convolution}
+La différence de performance entre ces deux versions est significative. Par exemple, pour une image de taille \( 250 \times 250 \), la version manuelle prend environ 15 secondes pour 5 iterations, tandis que la version rapide prend moins de 1 seconde pour le même nombre d'itérations.
+\subsubsection{Petite précision sur le PSF}
 
 Par ailleurs, plutôt que le PSF, un noyau de convolution a été utilisé pour générer les images floues. Cela a permis de simuler le flou sans avoir besoin de connaître la PSF exacte.
 

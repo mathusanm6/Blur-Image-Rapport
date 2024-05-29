@@ -1,0 +1,29 @@
+\subsection{Algorithme de Richardson-Lucy Aveugle}
+
+L'algorithme de Richardson-Lucy aveugle procède de manière itérative comme suit :
+
+\begin{algorithm}[H]
+\caption{Déconvolution Aveugle de Richardson-Lucy}
+\KwIn{Image floue $I$, PSF initial $P$, nombre d'itérations pour l'image $n\_it$, nombre d'itérations pour la PSF $psf\_it$}
+\KwOut{Image restaurée $J$, PSF affinée $P$}
+Initialiser $J_0 = I$\;
+\For{$n = 1$ \KwTo $n\_it$}{
+    Convoluer $J_n$ avec $P$ pour obtenir une estimation floutée $I_{\text{estimée}}$\;
+    $I_{\text{estimée}} = J_n \ast P$\;
+    Calculer le ratio de flou relatif $\text{Ratio} = \frac{I}{I_{\text{estimée}} + \epsilon}$\;
+    Convoluer ce ratio avec le miroir de la PSF\;
+    $\text{Correction} = \text{Ratio} \ast P_{\text{miroir}}$\;
+    Mettre à jour l'estimation $J_{n+1} = J_n \times \text{Correction}$\;
+    
+    \For{$m = 1$ \KwTo $psf\_it$}{
+        Convoluer $J_{n+1}$ avec $P$ pour obtenir une nouvelle estimation floutée $I_{\text{estimée}}$\;
+        Calculer le ratio d'erreur $E = \frac{I}{I_{\text{estimée}} + \epsilon}$\;
+        Convoluer ce ratio avec le miroir de l'image restaurée $J_{n+1}$\;
+        $\text{PSF\_Update} = E \ast J_{n+1, \text{miroir}}$\;
+        Mettre à jour la PSF $P = P \times \text{PSF\_Update}$\;
+        Normaliser $P = \frac{P}{\sum P}$\;
+    }
+}
+\Return $J_{n+1}, P$\;
+\end{algorithm}
+

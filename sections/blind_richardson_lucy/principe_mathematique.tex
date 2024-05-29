@@ -1,0 +1,12 @@
+\subsection{Principe Mathématique}
+
+L'algorithme de déconvolution aveugle de Richardson-Lucy vise à résoudre l'équation de convolution suivante :
+
+\begin{equation}
+    I = J \ast P
+\end{equation}
+
+où \( I \) est l'image observée (floue), \( J \) est l'image à restaurer (non floue) et \( P \) est la fonction d'étalement du point (PSF). La convolution est représentée par l'opérateur \( \ast \).
+
+L'objectif est de trouver \( J \) et \( P \) en maximisant la probabilité \( \mathbb{P}(I \ | \ J, P) \), qui est la probabilité de l'image observée étant donnée l'image à restaurer et la PSF. 
+Pour ce faire, l'algorithme itère entre la mise à jour de \( J \) et la mise à jour de \( P \).
