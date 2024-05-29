@@ -1,7 +1,13 @@
 \section{Introduction}
-Le floutage d'images est un problème courant en photographie et en imagerie scientifique. 
-Il peut être causé par divers facteurs tels que le mouvement de la caméra, la mise au point incorrecte, ou la diffusion de la lumière. 
+Le floutage d'images est un problème courant en photographie et en imagerie scientifique.
+Il peut être causé par divers facteurs tels que le mouvement de la caméra, la mise au point incorrecte, ou la diffusion de la lumière.
+
 La déconvolution\footnote{La convolution de deux fonctions \( f \) et \( g \) est définie par :
-\[
-(f * g)(t) = \int_{-\infty}^{\infty} f(\tau) g(t - \tau) \, d\tau
-\]}. est une technique utilisée pour inverser le processus de floutage et restaurer l'image originale. Parmi les nombreuses méthodes de déconvolution, l'algorithme de Richardson-Lucy est particulièrement populaire pour sa capacité à produire des résultats de haute qualité, même en présence de bruit.
+    \[
+        (f * g)(t) = \int_{-\infty}^{\infty} f(\tau) g(t - \tau) \, d\tau
+    \]} est une technique utilisée pour inverser le processus de floutage et restaurer l'image originale.
+Parmi les nombreuses méthodes de déconvolution, l'algorithme de Richardson-Lucy est particulièrement populaire pour sa capacité à produire des résultats de haute qualité, même en présence de bruit.
+
+Alors que l'algorithme de Richardson-Lucy nécessite une connaissance préalable de la fonction de floutage, nous avons exploré une variante de l'algorithme, Blind Richardson-Lucy, qui peut estimer la fonction de floutage à partir de l'image floutée elle-même.
+
+Toutefois, il est important de noter que ces différentes méthodes de déconvolution ne sont pas parfaites et présentent des limites d'utilisation.
