@@ -1,0 +1,38 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+
+\title{Rapport (partie floutage)}
+\author{Mathusan SELVAKUMAR et Ali OKOU}
+\date{31 May 2024}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+Le but de ce projet est d’essayer d’obtenir des images floutées à partir d’image, puis par la suite tenter de réobtenir une image nette à partir d’un résultat flouté.
+
+\section{Appliquer du flou sur une image}
+Avoir de pouvoir déflouter des images il nous faut dans un premier temps pouvoir les flouter, voici donc les deux méthodes que nous avons utilisés dans ce projet
+
+\subsection{Moyenne}
+La méthode utilisant la moyenne consiste à prendre un ‘’noyau’’ de n*n pixels et d’homogénéisé la valeur de tous les pixels du noyau en faisant la moyenne des valeurs de tous les pixels composants le noyau.
+
+Il nous suffit par la suite de répéter cette étape autant de fois que nécessaire pour obtenir une nouvelle image totalement floutée. Le nombre de pixel composants le noyau est directement corrélé à la qualité du flou obtenue, plus il est important meilleur est la qualité de ce dernier et plus il est difficile de déflouter l’image.
+
+
+\subsubsection{Résultats}
+
+\subsection{Flou glaussien}
+Le flou gaussien utilise un noyau tout comme le flou par moyenne, il va supprimer les valeurs les plus aberrantes du noyau, comme un passe-bas.
+
+De la même façon que le premier flou abordé, il faut répéter l’opération jusqu’à avoir traité l’ensemble des pixels présents sur l’image pour obtenir un résultat convenable.
+
+\subsubsection{Résultats}
+
+\section{Enlever Le flou}
+On sait maintenant flouter les images de plusieurs manière différentes, mais comment fait-on pour retrouver une image claire à partir d’une image floutée ?
+
+Plusieurs cas de figure s’ouvrent à nous. Le premier (le plus simple) s’agit de déflouter l’image en connaissant la méthode et les paramètres utilisé (ici on parle de la taille du noyau dans le cas du flou classique, ainsi que le lambda dans le cas du flou gaussien). Le seconde, nous demande de déflouter une image sans aucunes connaissances, que ce soit de la méthode utilisée ou de ses paramètres.
+
+\end{document}
